@@ -179,10 +179,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\InscripcionDT.cs" />
     <Compile Include="Models\ModeloCursos\Carrera.cs" />
     <Compile Include="Models\ModeloCursos\ContextoDB.cs" />
     <Compile Include="Models\ModeloCursos\Curso.cs" />
     <Compile Include="Models\ModeloCursos\Estudiante.cs" />
+    <Compile Include="Models\ModeloCursos\InscripcionHD.cs" />
     <Compile Include="Models\ModeloCursos\Persona.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

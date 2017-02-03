@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SistemaInscripcionCursos.Models.ModeloCursos;
+using SistemaInscripcionCursos.Models;
 
 namespace SistemaInscripcionCursos.Controllers
 {
@@ -39,8 +40,13 @@ namespace SistemaInscripcionCursos.Controllers
         // GET: Estudiantes/Create
         public ActionResult Create()
         {
-            ViewBag.CarreraId = new SelectList(db.Carreras, "Id", "Nombre");
-            ViewBag.UniversidadID = new SelectList(db.Universidades, "Id", "Nombre");
+
+            var lista = db.Carreras.ToList();
+            lista.Add(new Carrera {Id =  0, Nombre ="[Seleccione una carrera]"});
+            
+
+            ViewBag.CarreraId = new SelectList(lista.OrderBy(c => c.Nombre), "Id", "Nombre");
+            ViewBag.UniversidadID = new SelectList(db.Universidades.OrderBy(u => u.Nombre), "Id", "Nombre");
             return View();
         }
 
